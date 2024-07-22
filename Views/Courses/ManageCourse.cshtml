@@ -1,0 +1,62 @@
+﻿@model ManageCourseViewModel
+
+<h2>Students Enrolled in "@Model.Course.Title"</h2>
+
+@if (Model.Students.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Invitation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model.Students)
+            {
+                <tr>
+                    <td>@student.StudentID</td>
+                    <td>@student.FullName</td>
+                    <td>@student.Email</td>
+                    <td>@student._Status</td>
+                    <td><a asp-action="EmailSender" asp-route-id="@student.StudentID">Send Invitation</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No students found for "@Model.Course.Title" now</p>
+}
+
+<h2>Add Student</h2>
+<form asp-action="ManageCourse" method="post">
+    <div class="form-group">
+        <label asp-for="NewStudentFirstName">First Name</label>
+        <input asp-for="NewStudentFirstName" class="form-control" />
+        <span asp-validation-for="NewStudentFirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentLastName">Last Name</label>
+        <input asp-for="NewStudentLastName" class="form-control" />
+        <span asp-validation-for="NewStudentLastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewStudentEmail">Email</label>
+        <input asp-for="NewStudentEmail" class="form-control" />
+        <span asp-validation-for="NewStudentEmail" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Add Student</button>
+@*     <button type="submit" class="btn btn-info mt-3 ms-3"><a asp-action="EmailSender">send confirmation email</a></button>
+ *@</form>
+
+
+<a asp-action="Index" asp-controller="Home">Back to Home</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

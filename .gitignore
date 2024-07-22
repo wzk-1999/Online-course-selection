@@ -1,0 +1,80 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Roslyn generated files
+*.g.cs
+*.g.i.cs
+*.g.h
+
+# VS Code directories
+.vscode/
+
+# Visual Studio 2019
+.vs/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# IIS Logs
+[Ii][Nn][Ee][Tt][Ll][Oo][Gg]/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+
+# Rider system directory
+.idea_modules/
+
+# Rider libraries
+.libraries/
+
+# Rider run configurations
+.idea/
+
+# Rider logs
+.idea/
+
+# Rider workspace file
+.idea/
+
+# Rider workspace directories
+.idea/
+
+
+

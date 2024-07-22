@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Zhankui_Wang_ProblemAssignment2.Models.Course>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Code)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Title)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ClassRoom)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Instructor)
+			</th>
+			<th>Manage</th>
+			<th>Action</th>
+			<th>@Html.DisplayNameFor(model => model.NumStudents)</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Code)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.ClassRoom)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Instructor)
+				</td>
+				<td><a asp-action="ManageCourse" asp-route-id="@item.CourseID">Manage</a></td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.CourseID">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.CourseID">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.CourseID">Delete</a>
+				</td>
+				<td>@item.NumStudents</td>
+			</tr>
+		}
+	</tbody>
+</table>
